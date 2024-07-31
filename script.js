@@ -10,11 +10,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Isso é assustador!",
-                afirmacao: "afirmação"
+                afirmacao: "Somos chamados para uma missão muito importante, espalhar o plano de salvação por toda Terra."
             },
             {
                 texto: "Isso é maravilhoso!",
-                afirmacao: "afirmação"
+                afirmacao: ""
             }
         ]
     },
@@ -23,11 +23,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Utilizar a Bíblia como base de busca para encontrar informações relevantes para o trabalho e explicar numa linguagem que facilite o entendimento.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             },
             {
                 texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             }
         ]
     },
@@ -36,11 +36,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Defender a ideia de que Jesus é o único que pode preencher o vazio que sentimos.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             },
             {
                 texto: "Defender que somos bons o suficiente e não precisamos de Jesus.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             }
         ]
     },
@@ -49,11 +49,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Desenhar uma imagem que representa o que Jesus é para você.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             },
             {
                 texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             }
         ]
     },
@@ -62,11 +62,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Instruí-lo com base nos ensinamentos bíblicos e levá-lo para o corpo de Jesus Cristo (igreja) do qual você faz parte.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             },
             {
                 texto: "Falar para ele ir buscar as informações na Bíblia e deixá-lo se virar sozinho.",
-                afirmacao: "afirmação"
+                afirmacao: ""
             }
         ]
     },
@@ -105,7 +105,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "-";
+    caixaPerguntas.textContent = "Parabéns, você concluiu o Quiz com suceso! Contudo nós cristãos devemos cumprir nosso chamado. (Marcos1:17) Então, Jesus lhes disse: SIgam-me, e eu os farei pescadores de homens.                 (Matheus 5:13) -Vocês são o sal da terra. Mas, se o sal perder seu sabor, como restaurá-lo? Não servirá para nada, exceto para ser jogado fora e pisado pelos homens.";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
