@@ -6,48 +6,108 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu do Jardim você se depara com um novo Adão, um Adão que consegue responder todas as dúvidas que uma pessoa pode ter, ele também ofrece a salvação, a vida eterna etc. Qual o primeiro pensamento?",
+        enunciado: "Assim que saiu do Jardim, você se depara com um novo Adão, um Adão que consegue responder a todas as dúvidas que uma pessoa pode ter. Ele também oferece a salvação, a vida eterna, etc. Qual o primeiro pensamento?",
         alternativas: [
-            "Isso é assustador!",
-            "Isso é maravilhoso!"
+            {
+                texto: "Isso é assustador!",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Isso é maravilhoso!",
+                afirmacao: "afirmação"
+            }
         ]
     },
     {
-        enunciado: "Com a descoberta deste novo Adão, chamado Jesus de Nazaré, uma professora de teologia da escola decidiu fazer uma sequência de aulas sobre Jesus. No fim de uma aula ela pede que você escreva um trabalho sobre quem era Jesus em sala de aula. Qual atitude você toma?",
+        enunciado: "Com a descoberta deste novo Adão, chamado Jesus de Nazaré, uma professora de teologia da escola decidiu fazer uma sequência de aulas sobre Jesus. No fim de uma aula, ela pede que você escreva um trabalho sobre quem era Jesus. Qual atitude você toma?",
         alternativas: [
-            "Utilizar a Bíblia como base de buscas  para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-            "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
+            {
+                texto: "Utilizar a Bíblia como base de busca para encontrar informações relevantes para o trabalho e explicar numa linguagem que facilite o entendimento.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
+                afirmacao: "afirmação"
+            }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como Jesus transforma a vida das pessoas. Nesse debate, como você se posiciona?",
+        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa, também foi levantado um ponto muito importante: como Jesus transforma a vida das pessoas. Nesse debate, como você se posiciona?",
         alternativas: [
-            "Defende a ideia de que Jesus é o único que pode preencher o vazio que sentimos.",
-            "defenda que somos bons o suficiente e não precisamos de Jesus."
+            {
+                texto: "Defender a ideia de que Jesus é o único que pode preencher o vazio que sentimos.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Defender que somos bons o suficiente e não precisamos de Jesus.",
+                afirmacao: "afirmação"
+            }
         ]
     },
     {
         enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre Jesus. E agora?",
         alternativas: [
-            "Desenhar uma imagem que representa o que Jesus é para você.",
-            "Criar uma imagem utilizando um gerador de imagem de IA."
+            {
+                texto: "Desenhar uma imagem que representa o que Jesus é para você.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
+                afirmacao: "afirmação"
+            }
         ]
     },
     {
-        enunciado: "Um colega de turma após estudar sobre Jesus, resolveu aceita-lo,ele te procura para saber como fazer isto, o que você faz?",
+        enunciado: "Um colega de turma, após estudar sobre Jesus, resolveu aceitá-lo. Ele te procura para saber como fazer isso. O que você faz?",
         alternativas: [
-           "instrui-lo com base nos ensinamentos biblicos, e leva-lo para o corpo de Jesus Cristo (igreja) que você faz parte.",
-            "Falar para ele ir buscar as informações na Bíblia e deixar ele se virar sozinho."
+            {
+                texto: "Instruí-lo com base nos ensinamentos bíblicos e levá-lo para o corpo de Jesus Cristo (igreja) do qual você faz parte.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "Falar para ele ir buscar as informações na Bíblia e deixá-lo se virar sozinho.",
+                afirmacao: "afirmação"
+            }
         ]
     },
 ];
 
+
 let atual = 0;
 let perguntaAtual;
+let historiaFinal = "";
 
 function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
+}
+
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado() {
+    caixaPerguntas.textContent = "-";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
 }
 
 mostraPergunta();
