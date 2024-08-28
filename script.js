@@ -10,11 +10,17 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Isso é assustador!",
-                afirmacao: "Somos chamados para uma missão muito importante, espalhar o plano de salvação por toda Terra."
+                afirmacao: [
+                    "Somos chamados para uma missão muito importante, espalhar o plano de salvação por toda Terra",
+                    " pescadores de homens."
+                ]
             },
             {
                 texto: "Isso é maravilhoso!",
-                afirmacao: ""
+                afirmacao: [
+                    "Somos chamados para uma missão muito importante, espalhar o plano de salvação por toda Terra",
+                    " pescadores de homens"
+                ]
             }
         ]
     },
@@ -23,11 +29,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Utilizar a Bíblia como base de busca para encontrar informações relevantes para o trabalho e explicar numa linguagem que facilite o entendimento.",
-                afirmacao: ""
+                afirmacao: "Na Bíblia encontramos respostas para tudo."
             },
             {
                 texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: ""
+                afirmacao: "Na Bíblia encontramos respostas para tudo."
             }
         ]
     },
@@ -36,11 +42,17 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Defender a ideia de que Jesus é o único que pode preencher o vazio que sentimos.",
-                afirmacao: ""
+                afirmacao: [
+                    "Jesus nos salvou.",
+                    "pecadores,"
+                ]
             },
             {
                 texto: "Defender que somos bons o suficiente e não precisamos de Jesus.",
-                afirmacao: ""
+                afirmacao: [
+                    "Jesus nos salvou.",
+                    "pecadores,"
+                ]
             }
         ]
     },
@@ -49,11 +61,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Desenhar uma imagem que representa o que Jesus é para você.",
-                afirmacao: ""
+                afirmacao: "e nenhuma imagem consegue descreve-lo."
             },
             {
                 texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: ""
+                afirmacao: "e nenhuma imagem consegue descreve-lo."
             }
         ]
     },
@@ -62,11 +74,17 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Instruí-lo com base nos ensinamentos bíblicos e levá-lo para o corpo de Jesus Cristo (igreja) do qual você faz parte.",
-                afirmacao: ""
+                afirmacao: [
+                    "Devemos compartilhar Jesus",
+                    "não guarda-lo para nós mesmos."
+                ]
             },
             {
                 texto: "Falar para ele ir buscar as informações na Bíblia e deixá-lo se virar sozinho.",
-                afirmacao: ""
+                afirmacao: [
+                    "Devemos compartilhar Jesus",
+                    "não guarda-lo para nós mesmos."
+                ]
             }
         ]
     },
@@ -97,8 +115,8 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
+function respostaSelecionada(opcaoSelecionada){
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
     historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
@@ -108,6 +126,11 @@ function mostraResultado() {
     caixaPerguntas.textContent = "Parabéns, você concluiu o Quiz com suceso! Contudo nós cristãos devemos cumprir nosso chamado. (Marcos1:17) Então, Jesus lhes disse: SIgam-me, e eu os farei pescadores de homens.                 (Matheus 5:13) -Vocês são o sal da terra. Mas, se o sal perder seu sabor, como restaurá-lo? Não servirá para nada, exceto para ser jogado fora e pisado pelos homens.";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
+}
+
+function aleatorio (lista){
+    const posicao = Math.floor(Math.random()* lista.length);
+    return lista[posicao];
 }
 
 mostraPergunta();
