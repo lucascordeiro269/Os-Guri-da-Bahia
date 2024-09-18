@@ -57,15 +57,15 @@ const perguntas = [
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre Jesus. E agora?",
+        enunciado: "Ao final da discussão, você precisou falar para todos quem Jesus é pra você.",
         alternativas: [
             {
-                texto: "Desenhar uma imagem que representa o que Jesus é para você.",
-                afirmacao: "e nenhuma imagem consegue descreve-lo."
+                texto: "Falar o que Jesus é pra você com base nas suas experiências, sensações e momentos que  você viveu com Ele.",
+                afirmacao: "e nenhuma IA consegue descreve-lo."
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "e nenhuma imagem consegue descreve-lo."
+                texto: "Buscar informações de quem foi Jesus em uma IA.",
+                afirmacao: "e nenhuma IA consegue descreve-lo."
             }
         ]
     },
@@ -73,7 +73,7 @@ const perguntas = [
         enunciado: "Um colega de turma, após estudar sobre Jesus, resolveu aceitá-lo. Ele te procura para saber como fazer isso. O que você faz?",
         alternativas: [
             {
-                texto: "Instruí-lo com base nos ensinamentos bíblicos e levá-lo para o corpo de Jesus Cristo (igreja) do qual você faz parte.",
+                texto: "Instruí-lo com base nos ensinamentos bíblicos e orienta-lo para ser mais ítimo com o Senhor.",
                 afirmacao: [
                     "Devemos compartilhar Jesus",
                     "não guarda-lo para nós mesmos."
@@ -123,7 +123,7 @@ function respostaSelecionada(opcaoSelecionada){
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Parabéns, você concluiu o Quiz com suceso! Contudo nós cristãos devemos cumprir nosso chamado. (Marcos1:17) Então, Jesus lhes disse: SIgam-me, e eu os farei pescadores de homens.                 (Matheus 5:13) -Vocês são o sal da terra. Mas, se o sal perder seu sabor, como restaurá-lo? Não servirá para nada, exceto para ser jogado fora e pisado pelos homens.";
+    caixaPerguntas.textContent = "Parabéns, você concluiu o Quiz com suceso! Agora que tal você ser igual os discipulos de Jesus e espalhar as boas nova peo mundo?"
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
