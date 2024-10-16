@@ -24,14 +24,14 @@ export const perguntas = [
             {
                 texto: "Utilizar a Bíblia como base de busca para encontrar informações relevantes para o trabalho e explicar numa linguagem que facilite o entendimento.",
                 afirmacao: [
-                    "Na Bíblia encontramos respostas para tudo (Porque Deus amou o mundo tanto, que deu o seu único Filho, para que todo aquele que nele crer não morra, mas tenha vida eterna. - João 3-16)."
+                    "Na Bíblia encontramos respostas para tudo (Porque Deus amou o mundo tanto, que deu o seu único Filho, para que todo aquele que nEle crer não morra, mas tenha vida eterna. - João 3-16)."
                 ],
                 proxima: 3,
             },
             {
                 texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
                 afirmacao: [
-                    "Na Bíblia encontramos respostas para tudo (Porque Deus amou o mundo tanto, que deu o seu único Filho, para que todo aquele que nele crer não morra, mas tenha vida eterna. - João 3-16)."
+                    "Na Bíblia encontramos respostas para tudo (Porque Deus amou o mundo tanto, que deu o seu único Filho, para que todo aquele que nEle crer não morra, mas tenha vida eterna. - João 3-16)."
                 ],
                 proxima: 4,
             },
